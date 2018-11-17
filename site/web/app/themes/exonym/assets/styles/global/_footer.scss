@@ -1,0 +1,64 @@
+.footer-contact {
+  @include grid(center, center, column);
+  padding: 4rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+
+  ul {
+    @include listStripped();
+  }
+
+  h1,
+  .nav-phone {
+    font-size: 2em;
+    color: $blue-dark;
+    font-family: $font-heading;
+    margin-bottom: 2rem;
+    font-weight: $font-bold;
+
+    .name {
+      display: none;
+    }
+  }
+
+  h1 {
+    color: $blue;
+    font-family: $font-default;
+    font-style: italic;
+  }
+
+  .nav-email {
+    color: $black;
+    margin-bottom: 2rem;
+
+    a {
+      color: $black;
+    }
+
+    .name::after {
+      content: ': ';
+      display: inline;
+    }
+  }
+}
+
+.footer-affiliate {
+  display: block;
+  margin: 1rem auto;
+  width: 8rem;
+  height: auto;
+}
+
+.copyright {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: $font-heading;
+}
+
+@media (max-width: 768px) {
+  .footer-contact h1 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,90 @@
+.page-template-page-underconstruction #header {
+  display: none;
+}
+
+.undercon-logo {
+  padding: 1rem 0;
+
+  img {
+    display: block;
+    height: 5rem;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+.undercon-content {
+  .wrap {
+    @include grid(flex-end);
+    padding: 4rem 0 2rem 0;
+  }
+}
+
+.undercon-content-subhead {
+  width: 25%;
+  padding-right: 1rem;
+  text-align: right;
+  font-weight: $font-light;
+  color: $blue;
+}
+
+.undercon-content-text {
+  width: 65%;
+  padding-left: 1rem;
+}
+
+.undercon-login {
+  @include grid(center, center);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  min-height: 30vh;
+}
+
+.undercon-login-button {
+  position: relative;
+  z-index: 1;
+  display: block;
+  background-color: $white;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: $blue-dark;
+  border: 2px solid $blue-light;
+  border-radius: 8px;
+  transform: scale(1);
+  @include transition();
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+/** Responsive Breakpoints
+ ---------------------------------------------------------*/
+@media(max-width: 960px) {
+  .undercon-content-subhead {
+    width: 35%;
+  }
+
+  .undercon-content .wrap {
+    padding: 2rem 1rem 0rem 1rem;
+  }
+}
+
+@media(max-width: 630px) {
+  .undercon-content .wrap {
+    @include grid(center, center, column);
+  }
+
+  .undercon-content-subhead {
+    width: 100%;
+    text-align: center;
+    padding: 0 0 2rem 0;
+  }
+
+  .undercon-content-text {
+    width: 100%;
+    padding: 0;
+  }
+}

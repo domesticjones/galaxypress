@@ -1,0 +1,39 @@
+/** Configuration Components
+ ---------------------------------------------------------*/
+@import
+  'config/effects',
+  'config/functions',
+  'config/grid',
+  'config/reset',
+  'config/colors',
+  'config/typography',
+  'config/forms',
+  'config/animation',
+  'config/hamburger'
+;
+
+/** Global Elements
+ ---------------------------------------------------------*/
+@import
+  'global/base',
+  'global/header',
+  'global/footer',
+  '../../node_modules/slick-carousel/slick/slick.scss',
+  'global/slick'
+;
+
+/** Modules
+ ---------------------------------------------------------*/
+@import
+  'modules/twocol',
+  'modules/subhead',
+  'modules/imagegrid',
+  'modules/gallery'
+;
+
+/** Pages & Post Types
+ ---------------------------------------------------------*/
+@import
+  'pages/underconstruction',
+  'pages/companies'
+;

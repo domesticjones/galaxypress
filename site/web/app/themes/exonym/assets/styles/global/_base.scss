@@ -1,0 +1,67 @@
+/** Body & Wrapper
+ ---------------------------------------------------------*/
+
+html, body {
+  max-width: 100%;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+
+.stars-bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url('../images/stars.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+/** Link Styles
+ ---------------------------------------------------------*/
+a {
+  text-decoration: none;
+}
+@include linkColor($blue, all);
+
+/** Image Alignment
+ ---------------------------------------------------------*/
+
+.aligncenter {
+  margin: 1em auto;
+}
+
+.alignleft {
+  margin: 1em 1em 1em 0;
+}
+
+.alignright {
+  margin: 1em 0 1em 1em;
+}
+
+/** Responsive Breakpoints
+ ---------------------------------------------------------*/
+
+@media (min-width: 1025px) {
+  .wrap {
+    width: 1150px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrap {
+    width: 1400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}

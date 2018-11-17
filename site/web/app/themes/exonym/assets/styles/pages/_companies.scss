@@ -1,0 +1,529 @@
+.company-wrap {
+  padding: 4rem 0;
+
+  .wrap {
+    @include grid(center, center, row, wrap);
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-weight: $font-light;
+    color: $blue;
+    border-bottom: 1px solid $black;
+    padding: 0 0 1rem 0;
+  }
+
+  a, img {
+    display: block;
+    @include transition();
+  }
+
+  a {
+    display: block;
+    margin: 1rem;
+    max-width: 30%;
+
+    &:hover {
+
+      img {
+        transform: scale(0.9);
+      }
+
+      span {
+        color: $blue-light;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    min-width: 4rem;
+    margin: 0 auto;
+  }
+
+  span {
+    display: block;
+    padding: 0.5rem 0;
+    text-align: center;
+    color: $black;
+    @include transition();
+  }
+}
+
+.company-loggedin-false {
+  border-bottom: 2px solid $blue-light;
+  text-align: center;
+  font-size: 1.5rem;
+
+  a {
+    display: block;
+    margin: 1rem auto 0 auto;
+    text-transform: uppercase;
+    font-family: $font-heading;
+    font-weight: $font-bold;
+
+    &:hover {
+      color: $blue-light;
+    }
+  }
+
+  em {
+    color: $blue-light;
+  }
+}
+
+// SINGLE COMPANY
+#products-nav {
+  @include listStripped();
+  @include grid(center, center, row, wrap);
+  padding: 1rem 0;
+
+  span {
+    display: block;
+    line-height: 1;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: $blue;
+    margin: 1rem 0;
+  }
+
+  li {
+    display: block;
+    line-height: 1;
+    margin: 1rem 2rem;
+    white-space: nowrap;
+    cursor: hand;
+    cursor: pointer;
+    @include transition();
+
+    &::before,
+    &::after {
+      content: ' \2022 ';
+      display: inline;
+      font-size: 0;
+    }
+
+    &.is-active {
+      color: $blue-light;
+      transform: scale(1.1);
+
+      &::before,
+      &::after {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.products-data {
+  @include listStripped();
+  @include clearfix();
+
+  li {
+    display: none;
+    width: 100%;
+  }
+}
+
+.product-image {
+  width: 55%;
+  float: left;
+
+  img {
+    width: 100%;
+  }
+}
+
+.product-fields {
+  width: 45%;
+  padding-left: 2rem;
+  float: right;
+
+  button {
+    width: 80%;
+    float: right;
+    background-color: $white;
+    border: 2px solid $blue-light;
+    height: auto;
+    padding: 1em;
+    font-size: 1.25rem;
+    color: $blue;
+    text-transform: uppercase;
+    font-weight: $font-normal;
+    @include transition();
+    transform-origin: right;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.product-field-wrap {
+  @include grid(flex-start, center);
+  margin-bottom: 1rem;
+
+  label {
+    @include grid(flex-end, center);
+    margin: 0;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    text-align: right;
+    width: 20%;
+    padding: 0 1rem;
+    background-color: $blue-light;
+    height: 2.5rem;
+    line-height: 1;
+    color: $white;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  input {
+    display: block;
+    margin: 0;
+    width: 80%;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 2px solid $blue-light;
+  }
+}
+
+#product-preview {
+  display: none;
+  width: 50%;
+  margin: 2rem auto;
+  border: 2px solid $black;
+  border-radius: 0.5rem;
+
+  h2 {
+    text-align: center;
+    font-weight: $font-light;
+    padding: 1rem 0;
+    margin: 0;
+    color: $blue;
+  }
+
+  p {
+    font-style: $font-italic;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+.product-review-field-wrap {
+  width: 50%;
+  padding: 1rem 1rem 0 1rem;
+
+  label {
+    display: inline-block;
+    margin: 0;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    line-height: 1.75rem;
+    padding: 0 0.5rem;
+    background-color: $blue-light;
+    color: $white;
+    border-radius: 0.5rem 0.5rem 0 0 ;
+  }
+
+  input, textarea {
+    margin: 0 0 1rem 0;
+    border: 2px solid $blue-light;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+  }
+
+  &.product-review-field-full {
+    width: 100%;
+  }
+}
+
+.product-review-fields {
+  @include grid(space-between, flex-end, row, wrap);
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+}
+
+#product-preview-data {
+  @include listStripped();
+  margin-bottom: 1rem;
+
+  li {
+    @include grid();
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+}
+
+.product-review-fieldname {
+  display: block;
+  width: 50%;
+  @include fontBold();
+  text-align: right;
+  padding-right: 0.25rem;
+}
+
+.product-review-value {
+  display: block;
+  width: 50%;
+  text-align: left;
+  padding-left: 0.25rem;
+}
+
+.product-review-buttons {
+  @include grid(center, center);
+  padding: 1rem;
+}
+
+#product-cancel {
+  appearance: none;
+  padding: 0.25rem 1rem;
+  font-weight: $font-normal;
+  color: $magenta;
+  border: none;
+  width: auto;
+  white-space: nowrap;
+  background-color: transparent;
+  transform: scale(1);
+  @include transition();
+
+  &:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+  }
+}
+
+#product-submit {
+  border: 2px solid $blue-light;
+  width: auto;
+  padding: 1rem 2rem;
+  height: auto;
+  font-weight: $font-light;
+  text-transform: uppercase;
+  color: $blue;
+  background-color: $white;
+  transform: scale(1);
+  @include transition();
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+#respond {
+  display: none;
+}
+
+.company-orders {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+  margin-top: 2rem;
+
+  .wrap {
+    @include grid(center, center, column);
+  }
+
+  h2 {
+    color: $white;
+  }
+}
+
+#comments-title {
+  color: $white;
+  opacity: 0.7;
+}
+
+.comment-list {
+  @include listStripped();
+  @include grid(center, flex-start, row, wrap);
+  width: 100%;
+
+  li {
+    background-color: $white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    width: 22%;
+    margin: 1.5%;
+    transform: scale(1);
+    @include transition();
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.is-new {
+      .comment-content {
+        display: block
+      }
+      i.comment-open {
+        display: none;
+      }
+    }
+  }
+}
+
+.comment {
+  cursor: hand;
+  cursor: pointer;
+
+  span {
+    display: block;
+  }
+
+  .comment-author {
+    font-size: 0.85rem
+  }
+
+  i {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    color: $blue-light;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  p:nth-child(1) {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: $font-bold;
+  }
+}
+
+i.comment-close,
+.comment-content {
+  display: none;
+}
+
+// Modal Success Overlay
+#company-order-success {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.company-order-success-inner {
+  @include grid(center, center);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  padding: 2rem 0;
+  background-color: transparentize($blue-dark, 0.05);
+  color: $white;
+  text-align: center;
+}
+
+.company-order-success-contact {
+  @include grid(center, center);
+  @include linkColor($white);
+
+  ul {
+    @include listStripped();
+    padding: 1rem 2rem;
+
+    .name {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      font-weight: $font-normal;
+      font-family: $font-default;
+    }
+  }
+
+  a {
+    font-size: 2rem;
+    font-family: $font-heading;
+    font-weight: $font-bold;
+  }
+}
+
+#company-order-success-close {
+  width: auto;
+  margin: 1rem auto;
+  padding: 1em 3em;
+  font-size: 1.25rem;
+  height: auto;
+  font-weight: $font-normal;
+  color: $blue;
+  text-transform: uppercase;
+  border: 2px solid $blue-light;
+  background-color: $white;
+  transform: scale(1);
+  @include transition();
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+/** Responsive Breakpoints
+ ---------------------------------------------------------*/
+@media (max-width: 960px) {
+  .product-image,
+  .product-fields {
+    width: 50%;
+  }
+  #product-preview {
+    width: 100%;
+  }
+  .comment-list li {
+    width: 30%;
+  }
+}
+
+@media (max-width: 850px) {
+  .product-image,
+  .product-fields {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+
+  .product-image {
+    margin-bottom: 2rem;
+  }
+
+  .comment-list li {
+    width: 46%;
+  }
+
+  .company-order-success-contact {
+    @include grid(center, center, column);
+  }
+}
+
+@media (max-width: 500px) {
+  .product-field-wrap label {
+    width: 35%;
+  }
+  .product-field-wrap input {
+    width: 65%;
+  }
+  .product-fields button {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .product-review-field-wrap {
+    width: 100%;
+  }
+  .product-review-buttons {
+    @include grid(center, center, column);
+  }
+
+  .comment-list li {
+    width: 100%;
+  }
+}

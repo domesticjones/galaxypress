@@ -1,0 +1,22 @@
+.image-grid {
+  @include listStripped();
+  @include grid(flex-start, center, row, wrap);
+}
+
+.image-grid-single {
+  width: 25%;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    max-height: 12rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .image-grid-single {
+    width: 50%;
+  }
+}

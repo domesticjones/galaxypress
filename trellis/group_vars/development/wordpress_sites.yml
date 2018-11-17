@@ -1,0 +1,21 @@
+# Documentation: https://roots.io/trellis/docs/local-development-setup/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites
+# Define accompanying passwords/secrets in group_vars/development/vault.yml
+
+wordpress_sites:
+  galaxy.dev:
+    site_hosts:
+      - canonical: galaxy.dev
+        redirects:
+          - www.galaxy.dev
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    site_title: Galaxy Press
+    admin_user: developer
+    admin_email: exonym@domesticjones.com
+    multisite:
+      enabled: false
+    ssl:
+      enabled: true
+      provider: self-signed
+    cache:
+      enabled: false
